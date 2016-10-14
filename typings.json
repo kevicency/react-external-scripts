@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "react": "registry:npm/react#15.0.1+20160601175240"
+  },
+  "globalDependencies": {
+    "react-side-effect": "file:./.typings/react-side-effect.d.ts"
+  }
+}

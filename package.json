@@ -2,10 +2,23 @@
   "name": "react-external-scripts",
   "version": "0.0.1",
   "description": "Add external script tags in components for SSR",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "clean": "rimraf lib",
+    "prepublish": "npm run clean && npm run build"
   },
   "author": "Kevin Mees <kev.mees@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "react": "^15.3.2",
+    "rimraf": "^2.5.4",
+    "typescript": "^2.0.3"
+  },
+  "peerDependencies": {
+    "react": ">= 0.14"
+  },
+  "dependencies": {
+    "react-side-effect": "^1.0.2"
+  }
 }
