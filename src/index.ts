@@ -1,5 +1,5 @@
-import * as React from 'react';
-import withSideEffect = require('react-side-effect');
+import * as React from 'react'
+import withSideEffect = require('react-side-effect')
 
 export interface IScriptDefinition {
   url: String,
@@ -8,16 +8,16 @@ export interface IScriptDefinition {
 }
 
 export interface IExternalScriptsProps {
-  children?: React.ReactNode;
-  scripts?: Array<string | IScriptDefinition>;
+  children?: React.ReactNode
+  scripts?: Array<string | IScriptDefinition>
 }
 
 function reducePropsToState(propsList : Array<IExternalScriptsProps> = []) : Array<IScriptDefinition> {
-  const state = [] as Array<IScriptDefinition>;
+  const state = [] as Array<IScriptDefinition>
 
   propsList.forEach(props => {
     (props.scripts || []).forEach(script => {
-      if (typeof script === 'string') {     
+      if (typeof script === 'string') {
         state.push({ url: script })
       } else {
         state.push(script)
@@ -25,7 +25,7 @@ function reducePropsToState(propsList : Array<IExternalScriptsProps> = []) : Arr
     })
   })
 
-  return state;
+  return state
 }
 
 function handleStateChangeOnClient(/* scripts = [] */) {
@@ -47,4 +47,4 @@ class ExternalScripts extends React.Component<IExternalScriptsProps, null> {
 
 const WrappedComponent = withSideEffect(reducePropsToState, handleStateChangeOnClient)(ExternalScripts)
 
-export default WrappedComponent as React.ComponentClass<IExternalScriptsProps> 
+export default WrappedComponent as React.ComponentClass<IExternalScriptsProps>

@@ -1,18 +1,20 @@
 {
   "name": "react-external-scripts",
   "version": "0.0.1",
-  "description": "Add external script tags in components for SSR",
+  "description": "Declarative, nested external script tags for server-side React.",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf lib",
-    "prepublish": "npm run clean && npm run build"
+    "test": "tslint src/index.ts",
+    "prepublish": "npm run test && npm run clean && npm run build"
   },
   "author": "Kevin Mees <kev.mees@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "react": "^15.3.2",
     "rimraf": "^2.5.4",
+    "tslint": "^3.15.1",
     "typescript": "^2.0.3"
   },
   "peerDependencies": {
