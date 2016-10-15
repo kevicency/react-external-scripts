@@ -9,7 +9,23 @@
     "test": "tslint src/index.ts",
     "prepublish": "npm run test && npm run clean && npm run build"
   },
-  "author": "Kevin Mees <kev.mees@gmail.com>",
+   "keywords": [
+    "react",
+    "react-component",
+    "isomorphic",
+    "universal"
+  ],
+  "author": {
+    "name": "Kevin Mees",
+    "email": "kev.mees@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmees/react-external-scripts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kmees/react-external-scripts/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "react": "^15.3.2",
