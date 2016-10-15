@@ -1,9 +1,9 @@
 declare module 'react-side-effect' {
   function withSideEffect<T>(
     reducePropsToState : Function,
-    handleStateChangeOnClient : Function, 
+    handleStateChangeOnClient : Function,
     mapStateOnServer? : Function
-  ): (c: T) => T;
+  ) : (c : T) => T;
 
-  export = withSideEffect;
+  export = withSideEffect
 }

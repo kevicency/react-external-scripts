@@ -29,7 +29,7 @@ function reducePropsToState(propsList : Array<IExternalScriptsProps> = []) : Arr
 }
 
 function handleStateChangeOnClient(/* scripts = [] */) {
-  // noting to do
+  // not supported yet
 }
 
 class ExternalScripts extends React.Component<IExternalScriptsProps, null> {
@@ -47,4 +47,6 @@ class ExternalScripts extends React.Component<IExternalScriptsProps, null> {
 
 const WrappedComponent = withSideEffect(reducePropsToState, handleStateChangeOnClient)(ExternalScripts)
 
-export default WrappedComponent as React.ComponentClass<IExternalScriptsProps>
+export default WrappedComponent as React.ComponentClass<IExternalScriptsProps> & {
+  rewind() : Array<string | IScriptDefinition>
+}
